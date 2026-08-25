@@ -55,3 +55,69 @@
 
   setTimeout(type, 500);
 })();
+
+// Referenzen-Slider
+(function () {
+  'use strict';
+
+  var slider = document.querySelector('[data-slider]');
+  if (!slider) return;
+
+  var track = slider.querySelector('[data-slider-track]');
+  var slides = Array.prototype.slice.call(track.children);
+  var prevBtn = slider.querySelector('[data-slider-prev]');
+  var nextBtn = slider.querySelector('[data-slider-next]');
+  var dotsWrap = slider.querySelector('[data-slider-dots]');
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  var dots = slides.map(function (_, i) {
+    var dot = document.createElement('button');
+    dot.type = 'button';
+    dot.className = 'slider-dot';
+    dot.setAttribute('role', 'tab');
+    dot.setAttribute('aria-label', 'Bild ' + (i + 1) + ' von ' + slides.length);
+    dot.addEventListener('click', function () {
+      goTo(i);
+    });
+    dotsWrap.appendChild(dot);
+    return dot;
+  });
+
+  function currentIndex() {
+    var slideWidth = track.clientWidth;
+    return Math.round(track.scrollLeft / slideWidth);
+  }
+
+  function updateDots() {
+    var index = currentIndex();
+    dots.forEach(function (dot, i) {
+      dot.setAttribute('aria-selected', i === index ? 'true' : 'false');
+    });
+  }
+
+  function goTo(index) {
+    var clamped = Math.max(0, Math.min(slides.length - 1, index));
+    var slideWidth = track.clientWidth;
+    track.scrollTo({
+      left: clamped * slideWidth,
+      behavior: reduceMotion ? 'auto' : 'smooth'
+    });
+  }
+
+  prevBtn.addEventListener('click', function () {
+    goTo(currentIndex() - 1);
+  });
+  nextBtn.addEventListener('click', function () {
+    goTo(currentIndex() + 1);
+  });
+
+  var scrollTimeout;
+  track.addEventListener('scroll', function () {
+    window.clearTimeout(scrollTimeout);
+    scrollTimeout = window.setTimeout(updateDots, 80);
+  });
+
+  window.addEventListener('resize', updateDots);
+
+  updateDots();
+})();
