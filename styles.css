@@ -215,12 +215,6 @@ main a:not(.btn):not(.logo):hover {
   color: var(--color-text);
 }
 
-.header-cta {
-  font-size: 0.85rem;
-  padding: 0.6rem 1.1rem;
-  white-space: nowrap;
-}
-
 @media (min-width: 700px) {
   .main-nav {
     display: flex;
@@ -279,7 +273,7 @@ main a:not(.btn):not(.logo):hover {
   color: var(--color-text-secondary);
   font-size: 1.05rem;
   max-width: 46ch;
-  margin-bottom: var(--space-2);
+  margin-bottom: var(--space-3);
 }
 
 @media (min-width: 700px) {
@@ -292,7 +286,7 @@ main a:not(.btn):not(.logo):hover {
   font-family: var(--font-mono);
   font-size: 0.8rem;
   color: var(--color-text-secondary);
-  margin-top: var(--space-2);
+  margin-top: var(--space-3);
 }
 
 /* ==========================================================================
