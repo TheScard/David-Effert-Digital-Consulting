@@ -6,6 +6,7 @@
 <title>Datenschutz — David Effert</title>
 <meta name="robots" content="noindex">
 <link rel="icon" href="favicon.png" type="image/png">
+<meta name="theme-color" content="#17171A">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -17,7 +18,20 @@
 
 <header class="site-header">
   <div class="wrap header-inner">
-    <a href="index.html" class="logo">David Effert</a>
+    <a href="index.html" class="logo">
+      <span class="logo-mark"><img src="assets/img/logo.png" alt="" width="320" height="320"></span>
+      David Effert
+    </a>
+    <nav class="main-nav" id="main-nav" aria-label="Hauptnavigation">
+      <a href="index.html#leistungen">Leistungen</a>
+      <a href="index.html#referenzen">Referenzen</a>
+      <a href="index.html#ueber-mich">Über mich</a>
+      <a href="index.html#kontakt">Kontakt</a>
+    </nav>
+    <button type="button" class="nav-toggle" id="nav-toggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="main-nav">
+      <svg class="nav-toggle-icon icon-burger" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      <svg class="nav-toggle-icon icon-close" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
+    </button>
   </div>
 </header>
 
@@ -27,19 +41,60 @@
       <p class="eyebrow">Rechtliches</p>
       <h1 class="kontakt-headline">Datenschutzerklärung</h1>
 
-      <!-- TODO: Datenschutzerklärung gemäß DSGVO ergänzen -->
-      <p class="about-text">
-        [TODO: Verantwortlicher gemäß Art. 4 Abs. 7 DSGVO]<br><br>
-        [TODO: Erhobene Daten beim Besuch der Website, z.B. Server-Logfiles]<br><br>
-        [TODO: Hosting-Anbieter und Auftragsverarbeitung]<br><br>
-        [TODO: Kontaktaufnahme per E-Mail — welche Daten werden verarbeitet]<br><br>
-        [TODO: Rechte der betroffenen Person — Auskunft, Löschung, Widerspruch]<br><br>
-        [TODO: Keine Cookies/Tracking im aktuellen Stand — bei späterer Einbindung ergänzen]
-      </p>
+      <div class="legal-item">
+        <h2 class="legal-item-title">1. Verantwortlicher</h2>
+        <p class="legal-item-text">
+          David Effert<br>
+          Römerstr. 16<br>
+          53520 Schuld<br>
+          E-Mail: <a href="mailto:david.effert@outlook.de">david.effert@outlook.de</a>
+        </p>
+      </div>
 
-      <p class="about-text" style="margin-top: 2rem;">
-        <a href="index.html">← Zurück zur Startseite</a>
-      </p>
+      <div class="legal-item">
+        <h2 class="legal-item-title">2. Allgemeines zur Datenverarbeitung</h2>
+        <p class="legal-item-text">Diese Website erhebt und verarbeitet grundsätzlich keine personenbezogenen Daten der Besucher, außer den technisch durch das Hosting bedingten Server-Logs (siehe Punkt 3) und den Daten, die freiwillig per E-Mail-Kontakt übermittelt werden (siehe Punkt 4).</p>
+      </div>
+
+      <div class="legal-item">
+        <h2 class="legal-item-title">3. Hosting und Server-Logfiles</h2>
+        <p class="legal-item-text">Beim Aufruf der Website erhebt der Hostinganbieter automatisch technische Informationen (z.&nbsp;B. IP-Adresse, Datum/Uhrzeit des Zugriffs, aufgerufene Seite, verwendeter Browser) in Form von Server-Logfiles. Dies dient der technischen Sicherstellung eines störungsfreien Betriebs sowie der Sicherheit der Systeme (Art. 6 Abs. 1 lit. f DSGVO, berechtigtes Interesse). Eine Zusammenführung mit anderen Datenquellen findet nicht statt.</p>
+        <p class="legal-item-text">[Platzhalter: Hier muss noch der konkrete Hostinganbieter genannt werden, sobald das Deployment steht, z.&nbsp;B. Vercel – inklusive Verweis auf dessen Datenschutzerklärung.]</p>
+      </div>
+
+      <div class="legal-item">
+        <h2 class="legal-item-title">4. Kontaktaufnahme per E-Mail</h2>
+        <p class="legal-item-text">Bei Kontaktaufnahme per E-Mail werden die von dir mitgeteilten Daten (E-Mail-Adresse, Name, Inhalt der Nachricht) ausschließlich zur Bearbeitung der Anfrage gespeichert und verarbeitet (Art. 6 Abs. 1 lit. b DSGVO). Eine Weitergabe an Dritte erfolgt nicht.</p>
+      </div>
+
+      <div class="legal-item">
+        <h2 class="legal-item-title">5. Google Fonts</h2>
+        <p class="legal-item-text">Diese Website nutzt Google Fonts (Space Grotesk, Inter, JetBrains Mono) zur einheitlichen Darstellung von Schriftarten.</p>
+        <p class="legal-item-text">[Platzhalter: Bitte klären, ob die Fonts lokal eingebunden oder über Google-Server nachgeladen werden – das ändert den rechtlichen Text deutlich. Bei Nachladen über Google-Server muss auf die Datenübertragung in die USA und Google als Empfänger hingewiesen werden.]</p>
+      </div>
+
+      <div class="legal-item">
+        <h2 class="legal-item-title">6. Deine Rechte</h2>
+        <p class="legal-item-text">Dir stehen als betroffener Person folgende Rechte zu:</p>
+        <ul class="legal-rights-list">
+          <li><strong>Auskunft</strong> – du kannst Auskunft darüber verlangen, ob und welche Daten zu deiner Person verarbeitet werden.</li>
+          <li><strong>Berichtigung</strong> – du kannst die Korrektur unrichtiger Daten verlangen.</li>
+          <li><strong>Löschung</strong> – du kannst die Löschung deiner Daten verlangen, soweit keine gesetzlichen Aufbewahrungspflichten entgegenstehen.</li>
+          <li><strong>Einschränkung der Verarbeitung</strong> – du kannst in bestimmten Fällen verlangen, dass deine Daten nur eingeschränkt verarbeitet werden.</li>
+          <li><strong>Datenübertragbarkeit</strong> – du kannst verlangen, deine Daten in einem gängigen, maschinenlesbaren Format zu erhalten.</li>
+          <li><strong>Widerspruch</strong> – du kannst der Verarbeitung deiner Daten aus Gründen, die sich aus deiner besonderen Situation ergeben, widersprechen.</li>
+        </ul>
+        <p class="legal-item-text">Darüber hinaus hast du das Recht, dich bei einer Datenschutz-Aufsichtsbehörde über die Verarbeitung deiner personenbezogenen Daten zu beschweren.</p>
+      </div>
+
+      <div class="legal-item">
+        <h2 class="legal-item-title">7. Änderung dieser Datenschutzerklärung</h2>
+        <p class="legal-item-text">Diese Datenschutzerklärung wird bei Bedarf angepasst, um stets den aktuellen rechtlichen Anforderungen zu entsprechen oder Änderungen der hier beschriebenen Leistungen umzusetzen.</p>
+      </div>
+
+      <p class="legal-note">Hinweis: Diese Datenschutzerklärung wurde als Grundgerüst erstellt und muss vor dem produktiven Einsatz an die tatsächlich eingesetzten Dienste (Hosting, Schriftarten, ggf. künftige Tools) angepasst und rechtlich geprüft werden.</p>
+
+      <p class="legal-back"><a href="index.html">← Zurück zur Startseite</a></p>
     </div>
   </section>
 </main>
