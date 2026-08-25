@@ -1,0 +1,436 @@
+/* ==========================================================================
+   David Effert — Freelance-Website
+   Reines statisches CSS, mobile-first
+   ========================================================================== */
+
+:root {
+  --color-bg: #FAFAF7;
+  --color-text: #17171A;
+  --color-text-secondary: #6B6B65;
+  --color-accent: #1E3FFF;
+  --color-divider: #E4E3DD;
+
+  --font-display: 'Space Grotesk', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+
+  --wrap-max: 720px;
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  --space-4: 2.5rem;
+  --space-5: 4rem;
+  --space-6: 6rem;
+}
+
+/* ---- Reset ---- */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body, h1, h2, h3, p, ul, ol, li, figure { margin: 0; padding: 0; }
+ul, ol { list-style: none; }
+img, svg { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+
+html {
+  scroll-behavior: smooth;
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap {
+  max-width: var(--wrap-max);
+  margin-inline: auto;
+  padding-inline: var(--space-3);
+}
+
+/* ---- Accessibility helpers ---- */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+  padding: 0;
+  margin: -1px;
+}
+
+.skip-link {
+  position: absolute;
+  left: var(--space-2);
+  top: -100px;
+  background: var(--color-text);
+  color: var(--color-bg);
+  padding: var(--space-1) var(--space-2);
+  border-radius: 4px;
+  z-index: 100;
+  transition: top 0.2s ease;
+}
+.skip-link:focus {
+  top: var(--space-2);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* ---- Typography ---- */
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.02em;
+  color: var(--color-text-secondary);
+  text-transform: none;
+  margin-bottom: var(--space-2);
+}
+
+h1, h2 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--color-text);
+}
+
+/* ---- Links (inline, e.g. within paragraphs) ---- */
+main a:not(.btn):not(.logo) {
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-decoration-color: var(--color-divider);
+  text-underline-offset: 3px;
+  transition: text-decoration-color 0.15s ease;
+}
+main a:not(.btn):not(.logo):hover {
+  text-decoration-color: var(--color-accent);
+}
+
+/* ---- Buttons ---- */
+.btn {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.btn-primary {
+  background: var(--color-accent);
+  color: #FAFAF7;
+}
+.btn-primary:hover {
+  background: #1731CC;
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+.btn-outline:hover {
+  background: var(--color-accent);
+  color: #FAFAF7;
+}
+
+/* ==========================================================================
+   Header
+   ========================================================================== */
+
+.site-header {
+  border-bottom: 1px solid var(--color-divider);
+  position: sticky;
+  top: 0;
+  background: var(--color-bg);
+  z-index: 10;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  padding-block: var(--space-2);
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.05rem;
+  white-space: nowrap;
+}
+
+.main-nav {
+  display: none;
+}
+
+.main-nav a {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  margin-inline-start: var(--space-3);
+  transition: color 0.15s ease;
+}
+.main-nav a:hover {
+  color: var(--color-text);
+}
+
+.header-cta {
+  font-size: 0.85rem;
+  padding: 0.55rem 1rem;
+  white-space: nowrap;
+}
+
+@media (min-width: 700px) {
+  .main-nav {
+    display: flex;
+    align-items: center;
+  }
+}
+
+/* ==========================================================================
+   Hero
+   ========================================================================== */
+
+.hero {
+  padding-block: var(--space-6) var(--space-5);
+  border-bottom: 1px solid var(--color-divider);
+}
+
+.hero-headline {
+  font-size: 2rem;
+  line-height: 1.2;
+  margin-block: var(--space-2) var(--space-3);
+}
+
+#cursor-typer::after {
+  content: "";
+  display: inline-block;
+  width: 0.5ch;
+  border-right: 2px solid var(--color-accent);
+  margin-left: 2px;
+  animation: blink 1s step-end infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #cursor-typer::after {
+    animation: none;
+    opacity: 1;
+  }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.hero-subline {
+  color: var(--color-text-secondary);
+  font-size: 1.05rem;
+  max-width: 46ch;
+  margin-bottom: var(--space-3);
+}
+
+@media (min-width: 700px) {
+  .hero-headline {
+    font-size: 2.75rem;
+  }
+}
+
+/* ==========================================================================
+   Sections (generic)
+   ========================================================================== */
+
+.section {
+  padding-block: var(--space-5);
+  border-bottom: 1px solid var(--color-divider);
+}
+
+/* ---- Leistungen ---- */
+.service-item {
+  padding-block: var(--space-3);
+  border-top: 1px solid var(--color-divider);
+}
+.service-item:last-child {
+  padding-bottom: 0;
+}
+
+.service-title {
+  font-size: 1.15rem;
+  margin-bottom: var(--space-1);
+}
+
+.service-desc {
+  color: var(--color-text-secondary);
+  max-width: 60ch;
+}
+
+/* ---- Ablauf ---- */
+.process-list {
+  counter-reset: none;
+}
+
+.process-item {
+  display: flex;
+  gap: var(--space-3);
+  padding-block: var(--space-3);
+  border-top: 1px solid var(--color-divider);
+}
+
+.process-num {
+  font-family: var(--font-mono);
+  color: var(--color-text-secondary);
+  font-size: 0.9rem;
+  padding-top: 0.15rem;
+  flex-shrink: 0;
+}
+
+.process-title {
+  font-size: 1.05rem;
+  margin-bottom: var(--space-1);
+}
+
+.process-desc {
+  color: var(--color-text-secondary);
+}
+
+/* ---- Preise ---- */
+.price-teaser {
+  font-family: var(--font-mono);
+  font-size: 1.75rem;
+  font-weight: 500;
+  margin-bottom: var(--space-2);
+}
+
+.price-text {
+  color: var(--color-text-secondary);
+  max-width: 50ch;
+  margin-bottom: var(--space-3);
+}
+
+@media (min-width: 700px) {
+  .price-teaser {
+    font-size: 2.25rem;
+  }
+}
+
+/* ---- Referenzen ---- */
+.reference-item {
+  padding-block: var(--space-3);
+  border-top: 1px solid var(--color-divider);
+}
+.reference-item:first-of-type {
+  border-top: none;
+  padding-top: 0;
+}
+
+.reference-title {
+  font-size: 1.15rem;
+  margin-bottom: var(--space-1);
+}
+
+.reference-desc {
+  color: var(--color-text-secondary);
+  max-width: 60ch;
+  margin-bottom: var(--space-1);
+}
+
+.reference-link {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+}
+
+.reference-link-pending {
+  color: var(--color-text-secondary);
+  text-decoration: none;
+}
+
+/* ---- Ueber mich ---- */
+.about-text {
+  max-width: 62ch;
+  font-size: 1.05rem;
+}
+
+/* ---- Kontakt ---- */
+.kontakt-headline {
+  font-size: 1.75rem;
+  margin-bottom: var(--space-2);
+}
+
+.kontakt-text {
+  color: var(--color-text-secondary);
+  max-width: 50ch;
+  margin-bottom: var(--space-3);
+}
+
+.kontakt-email {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 1.15rem;
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-decoration-color: var(--color-divider);
+  text-underline-offset: 4px;
+  margin-bottom: var(--space-2);
+}
+.kontakt-email:hover {
+  text-decoration-color: var(--color-accent);
+}
+
+.kontakt-location {
+  color: var(--color-text-secondary);
+  font-size: 0.9rem;
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+
+.site-footer {
+  padding-block: var(--space-3);
+}
+
+.footer-inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+}
+
+.footer-nav {
+  display: flex;
+  gap: var(--space-3);
+}
+
+.footer-nav a {
+  color: var(--color-text-secondary);
+  text-decoration: underline;
+  text-decoration-color: var(--color-divider);
+  text-underline-offset: 3px;
+}
+.footer-nav a:hover {
+  color: var(--color-text);
+  text-decoration-color: var(--color-text-secondary);
+}
+
+@media (min-width: 700px) {
+  .footer-inner {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
