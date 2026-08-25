@@ -512,13 +512,6 @@ main a:not(.btn):not(.logo):hover {
     height: 100%;
     object-fit: cover;
   }
-
-  .reference-images--equal img {
-    height: 420px;
-    width: 100%;
-    object-fit: contain;
-    background: var(--color-bg);
-  }
 }
 
 /* ---- Ueber mich ---- */
