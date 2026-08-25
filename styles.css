@@ -188,8 +188,8 @@ main a:not(.btn):not(.logo):hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 3.75rem;
-  height: 3.75rem;
+  width: 100px;
+  height: 100px;
   flex-shrink: 0;
 }
 
