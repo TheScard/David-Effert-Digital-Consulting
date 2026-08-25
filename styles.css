@@ -188,18 +188,12 @@ main a:not(.btn):not(.logo):hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 2.75rem;
-  height: 2.75rem;
-  padding: 0.3rem;
-  border-radius: 9px;
-  background: #F5F5F1;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.9rem;
+  line-height: 1;
+  color: var(--color-accent-text);
   flex-shrink: 0;
-}
-
-.logo-mark img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
 }
 
 .main-nav {
@@ -290,6 +284,13 @@ main a:not(.btn):not(.logo):hover {
   }
 }
 
+.hero-footnote {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--color-text-secondary);
+  margin-top: var(--space-3);
+}
+
 /* ==========================================================================
    Sections (generic)
    ========================================================================== */
@@ -348,12 +349,26 @@ main a:not(.btn):not(.logo):hover {
 }
 
 /* ---- Preise ---- */
+.price-lines {
+  margin-bottom: var(--space-3);
+}
+
 .price-teaser {
   font-family: var(--font-mono);
   font-size: 1.75rem;
   font-weight: 500;
-  margin-bottom: var(--space-2);
+  margin-bottom: 0.4rem;
   color: var(--color-accent-text);
+}
+
+.price-sub {
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  color: var(--color-text-secondary);
+  margin-bottom: 0.3rem;
+}
+.price-sub:last-child {
+  margin-bottom: 0;
 }
 
 .price-text {
@@ -445,6 +460,27 @@ main a:not(.btn):not(.logo):hover {
   margin-bottom: var(--space-1);
 }
 
+.case-study {
+  margin-bottom: var(--space-2);
+}
+
+.case-study dt {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.02em;
+  color: var(--color-accent-text);
+  margin-top: var(--space-2);
+}
+.case-study dt:first-child {
+  margin-top: 0;
+}
+
+.case-study dd {
+  margin: 0.25rem 0 0 0;
+  color: var(--color-text-secondary);
+  max-width: 60ch;
+}
+
 .reference-link {
   font-family: var(--font-mono);
   font-size: 0.9rem;
@@ -498,6 +534,9 @@ main a:not(.btn):not(.logo):hover {
   max-width: 62ch;
   font-size: 1.05rem;
 }
+.about-text + .about-text {
+  margin-top: var(--space-3);
+}
 
 @media (min-width: 600px) {
   .about-grid {
@@ -520,6 +559,10 @@ main a:not(.btn):not(.logo):hover {
 .kontakt-text {
   color: var(--color-text-secondary);
   max-width: 50ch;
+  margin-bottom: var(--space-3);
+}
+
+.kontakt-cta-wrap {
   margin-bottom: var(--space-3);
 }
 
