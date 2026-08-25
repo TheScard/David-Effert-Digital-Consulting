@@ -515,8 +515,9 @@ main a:not(.btn):not(.logo):hover {
 
   .reference-images--equal img {
     height: 420px;
-    object-fit: cover;
-    object-position: top center;
+    width: 100%;
+    object-fit: contain;
+    background: var(--color-bg);
   }
 }
 
