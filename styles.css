@@ -213,7 +213,15 @@ main a:not(.btn):not(.logo):hover {
 .hero-headline {
   font-size: 2rem;
   line-height: 1.2;
-  margin-block: var(--space-2) var(--space-3);
+  margin-block: var(--space-2) var(--space-1);
+}
+
+.hero-typer-line {
+  font-family: var(--font-mono);
+  font-size: 1.1rem;
+  color: var(--color-text-secondary);
+  min-height: 1.5em;
+  margin-bottom: var(--space-3);
 }
 
 #cursor-typer::after {
