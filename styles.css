@@ -460,6 +460,18 @@ main a:not(.btn):not(.logo):hover {
   .reference-images {
     grid-template-columns: 1fr 1fr;
   }
+
+  .reference-images--trio .trio-main {
+    grid-row: 1 / 3;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .reference-images--trio .trio-top,
+  .reference-images--trio .trio-bottom {
+    height: 100%;
+    object-fit: cover;
+  }
 }
 
 /* ---- Ueber mich ---- */
