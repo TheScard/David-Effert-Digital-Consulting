@@ -5,7 +5,6 @@
 
 :root {
   --color-bg: #17171A;
-  --color-bg-elevated: #1D1D22;
   --color-text: #F5F5F1;
   --color-text-secondary: #A9A99F;
   --color-accent: #1E3FFF;
@@ -176,10 +175,31 @@ main a:not(.btn):not(.logo):hover {
 }
 
 .logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
   font-family: var(--font-display);
   font-weight: 700;
   font-size: 1.05rem;
   white-space: nowrap;
+}
+
+.logo-mark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  padding: 0.25rem;
+  border-radius: 7px;
+  background: #F5F5F1;
+  flex-shrink: 0;
+}
+
+.logo-mark img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .main-nav {
@@ -189,7 +209,8 @@ main a:not(.btn):not(.logo):hover {
 .main-nav a {
   font-size: 0.9rem;
   color: var(--color-text-secondary);
-  margin-inline-start: var(--space-3);
+  margin-inline-start: var(--space-2);
+  white-space: nowrap;
   transition: color 0.15s ease;
 }
 .main-nav a:hover {
@@ -347,111 +368,7 @@ main a:not(.btn):not(.logo):hover {
   }
 }
 
-/* ---- Referenzen: Slider ---- */
-.slider {
-  margin-bottom: var(--space-4);
-}
-
-.slider-viewport {
-  overflow: hidden;
-  border-radius: 10px;
-  border: 1px solid var(--color-divider);
-  background: var(--color-bg-elevated);
-}
-
-.slider-track {
-  display: flex;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-.slider-track::-webkit-scrollbar {
-  display: none;
-}
-
-.slide {
-  flex: 0 0 100%;
-  scroll-snap-align: start;
-}
-
-.slide img {
-  width: 100%;
-  height: 340px;
-  object-fit: contain;
-  background: var(--color-bg);
-  display: block;
-}
-
-.slide-caption {
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
-  color: var(--color-text-secondary);
-  padding: var(--space-2) var(--space-3);
-  border-top: 1px solid var(--color-divider);
-}
-
-.slide-project {
-  color: var(--color-text);
-}
-
-.slider-controls {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--space-2);
-  margin-top: var(--space-2);
-}
-
-.slider-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 2.25rem;
-  height: 2.25rem;
-  border-radius: 50%;
-  border: 1px solid var(--color-divider);
-  background: transparent;
-  color: var(--color-text);
-  cursor: pointer;
-  transition: border-color 0.15s ease, color 0.15s ease;
-}
-.slider-btn:hover {
-  border-color: var(--color-accent-text);
-  color: var(--color-accent-text);
-}
-
-.slider-dots {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.slider-dot {
-  width: 0.45rem;
-  height: 0.45rem;
-  border-radius: 50%;
-  border: none;
-  padding: 0;
-  background: var(--color-divider);
-  cursor: pointer;
-  transition: background 0.15s ease, transform 0.15s ease;
-}
-.slider-dot:hover {
-  background: var(--color-text-secondary);
-}
-.slider-dot[aria-selected="true"] {
-  background: var(--color-accent-text);
-  transform: scale(1.2);
-}
-
-@media (min-width: 700px) {
-  .slide img {
-    height: 480px;
-  }
-}
-
-/* ---- Referenzen: Textblöcke ---- */
+/* ---- Referenzen ---- */
 .reference-item {
   padding-block: var(--space-3);
   border-top: 1px solid var(--color-divider);
@@ -459,6 +376,19 @@ main a:not(.btn):not(.logo):hover {
 .reference-item:first-of-type {
   border-top: none;
   padding-top: 0;
+}
+
+.reference-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-2);
+}
+
+.reference-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
 }
 
 .reference-title {
@@ -481,6 +411,14 @@ main a:not(.btn):not(.logo):hover {
 .reference-link-pending {
   color: var(--color-text-secondary);
   text-decoration: none;
+}
+
+@media (min-width: 600px) {
+  .reference-grid {
+    grid-template-columns: 220px 1fr;
+    align-items: start;
+    gap: var(--space-4);
+  }
 }
 
 /* ---- Ueber mich ---- */
