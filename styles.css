@@ -353,6 +353,12 @@ main a:not(.btn):not(.logo):hover {
 }
 
 /* ---- Preise ---- */
+.section-preise {
+  background: rgba(30, 63, 255, 0.05);
+  border-top: 1px solid rgba(30, 63, 255, 0.2);
+  border-bottom: 1px solid rgba(30, 63, 255, 0.2);
+}
+
 .price-lines {
   margin-bottom: var(--space-3);
 }
@@ -444,18 +450,46 @@ main a:not(.btn):not(.logo):hover {
   padding-bottom: var(--space-2);
 }
 
+.screenshot-frame {
+  border-radius: 10px;
+  border: 1px solid rgba(228, 227, 221, 0.14);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+  background: #1B1B20;
+  overflow: hidden;
+  margin-bottom: var(--space-2);
+}
+
+.screenshot-bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0.55rem 0.75rem;
+  border-bottom: 1px solid rgba(228, 227, 221, 0.1);
+}
+
+.screenshot-bar span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(228, 227, 221, 0.25);
+}
+
+.screenshot-frame--plain {
+  background: var(--color-bg);
+}
+
 .reference-images {
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--space-2);
-  margin-bottom: var(--space-2);
+  gap: 1px;
+  background: rgba(228, 227, 221, 0.1);
 }
 
 .reference-images img {
   width: 100%;
   height: auto;
   display: block;
-  border-radius: 8px;
+  background: var(--color-bg);
 }
 
 .reference-desc {
