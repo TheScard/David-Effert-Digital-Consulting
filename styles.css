@@ -188,10 +188,10 @@ main a:not(.btn):not(.logo):hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 1.75rem;
-  height: 1.75rem;
-  padding: 0.25rem;
-  border-radius: 7px;
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: 0.3rem;
+  border-radius: 9px;
   background: #F5F5F1;
   flex-shrink: 0;
 }
@@ -368,32 +368,75 @@ main a:not(.btn):not(.logo):hover {
   }
 }
 
-/* ---- Referenzen ---- */
+/* ---- Referenzen: Akkordeon ---- */
 .reference-item {
-  padding-block: var(--space-3);
+  padding-block: var(--space-2);
   border-top: 1px solid var(--color-divider);
 }
 .reference-item:first-of-type {
   border-top: none;
-  padding-top: 0;
 }
 
-.reference-grid {
+.reference-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  padding-block: var(--space-1);
+  cursor: pointer;
+  list-style: none;
+}
+.reference-summary::-webkit-details-marker {
+  display: none;
+}
+.reference-summary::marker {
+  content: "";
+}
+
+.reference-summary-title {
+  font-size: 1.15rem;
+}
+
+.reference-chevron {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-secondary);
+  flex-shrink: 0;
+  transition: transform 0.2s ease, color 0.15s ease;
+}
+
+.reference-summary:hover .reference-chevron {
+  color: var(--color-text);
+}
+
+.reference-item[open] > .reference-summary .reference-chevron {
+  transform: rotate(180deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reference-chevron {
+    transition: none;
+  }
+}
+
+.reference-body {
+  padding-top: var(--space-2);
+  padding-bottom: var(--space-2);
+}
+
+.reference-images {
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--space-2);
+  margin-bottom: var(--space-2);
 }
 
-.reference-image img {
+.reference-images img {
   width: 100%;
   height: auto;
   display: block;
   border-radius: 8px;
-}
-
-.reference-title {
-  font-size: 1.15rem;
-  margin-bottom: var(--space-1);
 }
 
 .reference-desc {
@@ -414,10 +457,8 @@ main a:not(.btn):not(.logo):hover {
 }
 
 @media (min-width: 600px) {
-  .reference-grid {
-    grid-template-columns: 220px 1fr;
-    align-items: start;
-    gap: var(--space-4);
+  .reference-images {
+    grid-template-columns: 1fr 1fr;
   }
 }
 
