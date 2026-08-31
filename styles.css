@@ -860,6 +860,7 @@ main a:not(.btn):not(.logo):hover {
 }
 
 .visual-thumb {
+  position: relative;
   display: block;
   width: 100%;
   aspect-ratio: 1 / 1;
@@ -870,6 +871,20 @@ main a:not(.btn):not(.logo):hover {
   overflow: hidden;
   cursor: pointer;
   transition: border-color 0.15s ease, transform 0.15s ease;
+}
+
+.visual-badge {
+  position: absolute;
+  left: 8px;
+  bottom: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.03em;
+  color: var(--color-text);
+  background: rgba(23, 23, 26, 0.75);
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  pointer-events: none;
 }
 .visual-thumb:hover {
   border-color: var(--color-accent-text);
@@ -982,4 +997,20 @@ main a:not(.btn):not(.logo):hover {
 }
 .lightbox-close:hover {
   background: rgba(245, 245, 241, 0.16);
+}
+
+.lightbox-badge {
+  position: fixed;
+  z-index: 201;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.03em;
+  color: var(--color-text);
+  background: rgba(23, 23, 26, 0.75);
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+  pointer-events: none;
+}
+.lightbox-badge[hidden] {
+  display: none;
 }
