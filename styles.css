@@ -872,6 +872,20 @@ main a:not(.btn):not(.logo):hover {
   filter: invert(90%) hue-rotate(180deg) contrast(90%);
 }
 
+.kreativ-ki-note {
+  margin-top: var(--space-3);
+}
+
+.kreativ-ki-note a:not(.btn):not(.logo) {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: #6B6B65;
+  text-decoration: none;
+}
+.kreativ-ki-note a:not(.btn):not(.logo):hover {
+  text-decoration: underline;
+}
+
 /* ---- Lightbox ---- */
 .lightbox {
   position: fixed;
