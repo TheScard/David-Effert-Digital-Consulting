@@ -119,3 +119,47 @@
     desktopQuery.addListener(handleQueryChange);
   }
 })();
+
+// Visuals-Lightbox
+(function () {
+  'use strict';
+
+  var lightbox = document.getElementById('lightbox');
+  var lightboxImg = document.getElementById('lightbox-img');
+  var closeBtn = document.getElementById('lightbox-close');
+  var thumbs = document.querySelectorAll('.visual-thumb');
+  if (!lightbox || !lightboxImg || !closeBtn || !thumbs.length) return;
+
+  var lastFocused = null;
+
+  function openLightbox(src, alt) {
+    lastFocused = document.activeElement;
+    lightboxImg.src = src;
+    lightboxImg.alt = alt || '';
+    lightbox.hidden = false;
+    closeBtn.focus();
+  }
+
+  function closeLightbox() {
+    lightbox.hidden = true;
+    lightboxImg.src = '';
+    if (lastFocused) lastFocused.focus();
+  }
+
+  thumbs.forEach(function (thumb) {
+    thumb.addEventListener('click', function () {
+      var img = thumb.querySelector('img');
+      openLightbox(thumb.getAttribute('data-lightbox-src'), img ? img.alt : '');
+    });
+  });
+
+  closeBtn.addEventListener('click', closeLightbox);
+
+  lightbox.addEventListener('click', function (event) {
+    if (event.target === lightbox) closeLightbox();
+  });
+
+  document.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape' && !lightbox.hidden) closeLightbox();
+  });
+})();
