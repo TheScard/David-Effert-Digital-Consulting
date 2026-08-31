@@ -178,10 +178,27 @@ main a:not(.btn):not(.logo):hover {
   display: flex;
   align-items: center;
   gap: 0.6rem;
+  white-space: nowrap;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.logo-name {
   font-family: var(--font-display);
   font-weight: 700;
   font-size: 1.05rem;
-  white-space: nowrap;
+}
+
+.logo-tagline {
+  font-family: var(--font-mono);
+  font-size: 0.5rem;
+  letter-spacing: 0.09em;
+  color: #6B6B65;
+  margin-top: 2px;
 }
 
 .logo-mark {
@@ -656,6 +673,14 @@ main a:not(.btn):not(.logo):hover {
   margin-bottom: var(--space-3);
 }
 
+.kontakt-email-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: var(--space-2);
+}
+
 .kontakt-email {
   display: inline-block;
   font-family: var(--font-mono);
@@ -664,10 +689,41 @@ main a:not(.btn):not(.logo):hover {
   text-decoration: underline;
   text-decoration-color: var(--color-divider);
   text-underline-offset: 4px;
-  margin-bottom: var(--space-2);
 }
 .kontakt-email:hover {
   text-decoration-color: var(--color-accent-text);
+}
+
+.copy-email-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--color-text-secondary);
+  background: transparent;
+  border: 1px solid var(--color-divider);
+  border-radius: 20px;
+  padding: 0.3rem 0.7rem;
+  cursor: pointer;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+.copy-email-btn:hover {
+  border-color: var(--color-accent-text);
+  color: var(--color-text);
+}
+.copy-email-btn .check-icon {
+  display: none;
+}
+.copy-email-btn.is-copied {
+  border-color: var(--color-accent-text);
+  color: var(--color-accent-text);
+}
+.copy-email-btn.is-copied .copy-icon {
+  display: none;
+}
+.copy-email-btn.is-copied .check-icon {
+  display: block;
 }
 
 .kontakt-location {

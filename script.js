@@ -163,3 +163,55 @@
     if (event.key === 'Escape' && !lightbox.hidden) closeLightbox();
   });
 })();
+
+// Kontakt: E-Mail-Adresse kopieren
+(function () {
+  'use strict';
+
+  var btn = document.getElementById('copy-email-btn');
+  if (!btn) return;
+
+  var label = btn.querySelector('.copy-btn-label');
+  var email = btn.getAttribute('data-email');
+  var resetTimer = null;
+
+  function showCopied() {
+    btn.classList.add('is-copied');
+    if (label) label.textContent = 'Kopiert!';
+    btn.setAttribute('aria-label', 'E-Mail-Adresse kopiert');
+    clearTimeout(resetTimer);
+    resetTimer = setTimeout(function () {
+      btn.classList.remove('is-copied');
+      if (label) label.textContent = 'Kopieren';
+      btn.setAttribute('aria-label', 'E-Mail-Adresse kopieren');
+    }, 1800);
+  }
+
+  function fallbackCopy(text) {
+    var textarea = document.createElement('textarea');
+    textarea.value = text;
+    textarea.setAttribute('readonly', '');
+    textarea.style.position = 'absolute';
+    textarea.style.left = '-9999px';
+    document.body.appendChild(textarea);
+    textarea.select();
+    try {
+      document.execCommand('copy');
+    } catch (err) {
+      // Kopieren nicht moeglich – der mailto-Link bleibt als Alternative bestehen.
+    }
+    document.body.removeChild(textarea);
+  }
+
+  btn.addEventListener('click', function () {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(email).then(showCopied, function () {
+        fallbackCopy(email);
+        showCopied();
+      });
+    } else {
+      fallbackCopy(email);
+      showCopied();
+    }
+  });
+})();
