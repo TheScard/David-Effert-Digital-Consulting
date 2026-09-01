@@ -10,7 +10,8 @@
 <meta name="theme-color" content="#F2F5EE">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"></noscript>
 <link rel="stylesheet" href="../styles.css">
 <script>
   window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
@@ -54,8 +55,14 @@
       <figure class="screenshot-frame">
         <div class="screenshot-bar" aria-hidden="true"><span></span><span></span><span></span></div>
         <div class="reference-images">
-          <img src="../assets/img/ref-artistup-1.jpg" alt="ArtistUP App – Startbildschirm mit Charts, Streak und Künstler-Dashboard" loading="lazy" width="900" height="1809">
-          <img src="../assets/img/ref-artistup-2.jpg" alt="ArtistUP App – Künstler-Dashboard mit Likes, Swipes und Statistiken" loading="lazy" width="1000" height="2010">
+          <picture>
+            <source srcset="../assets/img/ref-artistup-1.webp" type="image/webp">
+            <img src="../assets/img/ref-artistup-1.jpg" alt="ArtistUP App – Startbildschirm mit Charts, Streak und Künstler-Dashboard" loading="lazy" width="900" height="1809">
+          </picture>
+          <picture>
+            <source srcset="../assets/img/ref-artistup-2.webp" type="image/webp">
+            <img src="../assets/img/ref-artistup-2.jpg" alt="ArtistUP App – Künstler-Dashboard mit Likes, Swipes und Statistiken" loading="lazy" width="1000" height="2010">
+          </picture>
         </div>
       </figure>
       <dl class="case-study">

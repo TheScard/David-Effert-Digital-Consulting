@@ -22,7 +22,8 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"></noscript>
 
 <link rel="stylesheet" href="styles.css">
 <script>
@@ -146,18 +147,18 @@
   <!-- LEISTUNGEN -->
   <section class="section" id="leistungen">
     <div class="wrap">
-      <p class="eyebrow">Leistungen</p>
+      <h2 class="eyebrow">Leistungen</h2>
       <ul class="service-list">
         <li class="service-item">
-          <h2 class="service-title">Websites</h2>
+          <h3 class="service-title">Websites</h3>
           <p class="service-desc">Individuelles Design, bis zu 5 Seiten, responsive für alle Geräte, technische SEO-Grundoptimierung, SSL &amp; Deployment inklusive.</p>
         </li>
         <li class="service-item">
-          <h2 class="service-title">Wartung &amp; Pflege</h2>
+          <h3 class="service-title">Wartung &amp; Pflege</h3>
           <p class="service-desc">Managed Hosting, laufende technische Betreuung, Monitoring und kleine Änderungen im Monat – damit du dich um dein Geschäft kümmerst, nicht um deine Website.</p>
         </li>
         <li class="service-item">
-          <h2 class="service-title">Web-Apps</h2>
+          <h3 class="service-title">Web-Apps</h3>
           <p class="service-desc">Individuelle Funktionen wie Terminbuchung, Kundenbereich oder eigene Tools – von der ersten Idee bis zur laufenden App.</p>
         </li>
       </ul>
@@ -167,22 +168,31 @@
   <!-- KREATIV-ANGEBOTE -->
   <section class="section" id="kreativ">
     <div class="wrap">
-      <p class="eyebrow">Visuals & Songs</p>
+      <h2 class="eyebrow">Visuals & Songs</h2>
       <p class="kreativ-intro">Neben Websites und Apps entstehen bei mir auch individuelle KI-gestützte Visuals und Songs – für Unternehmen genauso wie für persönliche Anlässe.</p>
 
       <div class="kreativ-block">
-        <h2 class="kreativ-block-title">Visuals &amp; Bildwelten</h2>
+        <h3 class="kreativ-block-title">Visuals &amp; Bildwelten</h3>
         <p class="kreativ-block-desc">KI-gestützte Bildbearbeitung und Bildgenerierung für Website, Social Media oder Kampagnen. Einzelbilder, Serien oder kleine Bildwelten – schnell, flexibel und individuell umgesetzt.</p>
         <div class="visuals-grid visuals-grid--teaser">
           <button type="button" class="visual-thumb" data-lightbox-src="assets/img/kreativ-visual-1.jpg" aria-label="Visual-Beispiel 1 vergrößert anzeigen">
-            <img src="assets/img/kreativ-visual-1.jpg" alt="Album-Cover „Become the Monster“ mit zerbrochenem Spiegel und Textzeilen im dunklen Horror-Stil" loading="lazy" width="1254" height="1254">
+            <picture>
+              <source srcset="assets/img/kreativ-visual-1.webp" type="image/webp">
+              <img src="assets/img/kreativ-visual-1.jpg" alt="Album-Cover „Become the Monster“ mit zerbrochenem Spiegel und Textzeilen im dunklen Horror-Stil" loading="lazy" width="1254" height="1254">
+            </picture>
           </button>
           <button type="button" class="visual-thumb" data-lightbox-src="assets/img/kreativ-visual-2.jpg" data-ai-generated="true" aria-label="Visual-Beispiel 2 vergrößert anzeigen">
-            <img src="assets/img/kreativ-visual-2.jpg" alt="KI-generiertes Porträt eines Mannes mit Bart, fotorealistisch" loading="lazy" width="788" height="1400">
+            <picture>
+              <source srcset="assets/img/kreativ-visual-2.webp" type="image/webp">
+              <img src="assets/img/kreativ-visual-2.jpg" alt="KI-generiertes Porträt eines Mannes mit Bart, fotorealistisch" loading="lazy" width="788" height="1400">
+            </picture>
             <span class="visual-badge" aria-hidden="true">KI-generiert</span>
           </button>
           <button type="button" class="visual-thumb" data-lightbox-src="assets/img/kreativ-visual-3.jpg" data-ai-generated="true" aria-label="Visual-Beispiel 3 vergrößert anzeigen">
-            <img src="assets/img/kreativ-visual-3.jpg" alt="KI-generiertes Bild eines modernen Arbeitsplatzes mit Laptop und Monitor, die Website-Designs zeigen, fotorealistisch" loading="lazy" width="1400" height="788">
+            <picture>
+              <source srcset="assets/img/kreativ-visual-3.webp" type="image/webp">
+              <img src="assets/img/kreativ-visual-3.jpg" alt="KI-generiertes Bild eines modernen Arbeitsplatzes mit Laptop und Monitor, die Website-Designs zeigen, fotorealistisch" loading="lazy" width="1400" height="788">
+            </picture>
             <span class="visual-badge" aria-hidden="true">KI-generiert</span>
           </button>
         </div>
@@ -190,7 +200,7 @@
       </div>
 
       <div class="kreativ-block">
-        <h2 class="kreativ-block-title">Personalisierte Songs</h2>
+        <h3 class="kreativ-block-title">Personalisierte Songs</h3>
         <p class="kreativ-block-desc">Individuelle Songs für Geburtstag, Hochzeit oder Jubiläum – oder als Marken- bzw. Firmensong für Unternehmen. Mit persönlichen Inhalten statt Standard-Textbausteinen. Verfügbar in Basic-, Personal- und Premium-Umfang.</p>
         <ul class="songs-list">
           <li class="song-item">
@@ -208,33 +218,33 @@
   <!-- ABLAUF -->
   <section class="section" id="ablauf">
     <div class="wrap">
-      <p class="eyebrow">Ablauf</p>
+      <h2 class="eyebrow">Ablauf</h2>
       <ol class="process-list">
         <li class="process-item">
           <span class="process-num">01</span>
           <div>
-            <h2 class="process-title">Erstgespräch</h2>
+            <h3 class="process-title">Erstgespräch</h3>
             <p class="process-desc">Wir klären Ziel, Umfang und Budget.</p>
           </div>
         </li>
         <li class="process-item">
           <span class="process-num">02</span>
           <div>
-            <h2 class="process-title">Konzept &amp; Design</h2>
+            <h3 class="process-title">Konzept &amp; Design</h3>
             <p class="process-desc">Du bekommst einen Entwurf, abgestimmt auf dein Unternehmen.</p>
           </div>
         </li>
         <li class="process-item">
           <span class="process-num">03</span>
           <div>
-            <h2 class="process-title">Umsetzung</h2>
+            <h3 class="process-title">Umsetzung</h3>
             <p class="process-desc">Ich baue die Seite, du gibst Feedback in bis zu 2 Korrekturschleifen.</p>
           </div>
         </li>
         <li class="process-item">
           <span class="process-num">04</span>
           <div>
-            <h2 class="process-title">Übergabe &amp; Betreuung</h2>
+            <h3 class="process-title">Übergabe &amp; Betreuung</h3>
             <p class="process-desc">Live-Schaltung, optional laufende Pflege danach.</p>
           </div>
         </li>
@@ -245,7 +255,7 @@
   <!-- PREISE -->
   <section class="section section-preise" id="preise">
     <div class="wrap">
-      <p class="eyebrow">Preise</p>
+      <h2 class="eyebrow">Preise</h2>
       <div class="price-lines">
         <p class="price-teaser">Websites ab 1.290&nbsp;€</p>
         <p class="price-sub">Wartung optional ab 59&nbsp;€ / Monat</p>
@@ -261,15 +271,18 @@
   <!-- REFERENZEN -->
   <section class="section" id="referenzen">
     <div class="wrap">
-      <p class="eyebrow">Referenzen</p>
+      <h2 class="eyebrow">Referenzen</h2>
 
       <div class="reference-teaser-grid">
         <article class="reference-teaser-card">
           <a href="referenzen/artistup.html" class="reference-teaser-img-link">
-            <img class="reference-teaser-img reference-teaser-img--top" src="assets/img/ref-artistup-1.jpg" alt="ArtistUP App-Screenshot" loading="lazy" width="900" height="1809">
+            <picture>
+              <source srcset="assets/img/ref-artistup-1.webp" type="image/webp">
+              <img class="reference-teaser-img reference-teaser-img--top" src="assets/img/ref-artistup-1.jpg" alt="ArtistUP App-Screenshot" loading="lazy" width="900" height="1809">
+            </picture>
           </a>
           <div class="reference-teaser-body">
-            <h2 class="reference-teaser-title">ArtistUP</h2>
+            <h3 class="reference-teaser-title">ArtistUP</h3>
             <p class="reference-teaser-desc">Swipe-basierte Musik-Discovery-App – Artists laden Tracks hoch, Hörer geben strukturiertes Feedback.</p>
             <a href="referenzen/artistup.html" class="reference-link">Mehr erfahren →</a>
           </div>
@@ -277,10 +290,13 @@
 
         <article class="reference-teaser-card">
           <a href="referenzen/marius-althof-filmproduktion.html" class="reference-teaser-img-link">
-            <img class="reference-teaser-img" src="assets/img/ref-mafilm-1.jpg" alt="Marius Althof Filmproduktion Website-Ausschnitt" loading="lazy" width="2000" height="811">
+            <picture>
+              <source srcset="assets/img/ref-mafilm-1.webp" type="image/webp">
+              <img class="reference-teaser-img" src="assets/img/ref-mafilm-1.jpg" alt="Marius Althof Filmproduktion Website-Ausschnitt" loading="lazy" width="2000" height="811">
+            </picture>
           </a>
           <div class="reference-teaser-body">
-            <h2 class="reference-teaser-title">Marius Althof Filmproduktion</h2>
+            <h3 class="reference-teaser-title">Marius Althof Filmproduktion</h3>
             <p class="reference-teaser-desc">Kompletter Website-Neubau für einen Filmproduzenten mit Fokus auf aktuelles Video-Portfolio.</p>
             <a href="referenzen/marius-althof-filmproduktion.html" class="reference-link">Mehr erfahren →</a>
           </div>
@@ -288,10 +304,13 @@
 
         <article class="reference-teaser-card">
           <a href="referenzen/lions-adenau.html" class="reference-teaser-img-link">
-            <img class="reference-teaser-img reference-teaser-img--upper" src="assets/img/ref-lions-1.jpg" alt="Lions Adenau App-Screenshot" loading="lazy" width="1000" height="1767">
+            <picture>
+              <source srcset="assets/img/ref-lions-1.webp" type="image/webp">
+              <img class="reference-teaser-img reference-teaser-img--upper" src="assets/img/ref-lions-1.jpg" alt="Lions Adenau App-Screenshot" loading="lazy" width="1000" height="1767">
+            </picture>
           </a>
           <div class="reference-teaser-body">
-            <h2 class="reference-teaser-title">Lions Adenau</h2>
+            <h3 class="reference-teaser-title">Lions Adenau</h3>
             <p class="reference-teaser-desc">Eigene Vereins-App für Kalender, Fahrgemeinschaften und Trainings-Zu-/Absagen.</p>
             <a href="referenzen/lions-adenau.html" class="reference-link">Mehr erfahren →</a>
           </div>
@@ -299,10 +318,13 @@
 
         <article class="reference-teaser-card">
           <a href="referenzen/the-error-divine.html" class="reference-teaser-img-link">
-            <img class="reference-teaser-img" src="assets/img/ref-errordivine-1.jpg" alt="The Error Divine Album-Cover" loading="lazy" width="720" height="1280">
+            <picture>
+              <source srcset="assets/img/ref-errordivine-1.webp" type="image/webp">
+              <img class="reference-teaser-img" src="assets/img/ref-errordivine-1.jpg" alt="The Error Divine Album-Cover" loading="lazy" width="720" height="1280">
+            </picture>
           </a>
           <div class="reference-teaser-body">
-            <h2 class="reference-teaser-title">The Error Divine</h2>
+            <h3 class="reference-teaser-title">The Error Divine</h3>
             <p class="reference-teaser-desc">Mein musikalisches Nebenprojekt – eine digitale Metalcore-Band als erster Testkünstler auf ArtistUP.</p>
             <a href="referenzen/the-error-divine.html" class="reference-link">Mehr erfahren →</a>
           </div>
@@ -314,10 +336,13 @@
   <!-- UEBER MICH -->
   <section class="section" id="ueber-mich">
     <div class="wrap">
-      <p class="eyebrow">Über mich</p>
+      <h2 class="eyebrow">Über mich</h2>
       <div class="about-grid">
         <figure class="about-photo">
-          <img src="assets/img/ich.jpg" alt="David Effert an einem Bachlauf in der Eifel" loading="lazy" width="1000" height="1500">
+          <picture>
+            <source srcset="assets/img/ich.webp" type="image/webp">
+            <img src="assets/img/ich.jpg" alt="David Effert an einem Bachlauf in der Eifel" loading="lazy" width="1000" height="1500">
+          </picture>
         </figure>
         <div class="about-text-col">
           <p class="about-text">Ich bin David, komme aus der Eifel und entwickle Websites und Apps am liebsten selbst – von der ersten Idee bis zu dem Punkt, an dem alles zuverlässig läuft.</p>
@@ -330,8 +355,8 @@
   <!-- KONTAKT -->
   <section class="section" id="kontakt">
     <div class="wrap">
-      <p class="eyebrow">Kontakt</p>
-      <h2 class="kontakt-headline">Lass uns reden.</h2>
+      <h2 class="eyebrow">Kontakt</h2>
+      <h3 class="kontakt-headline">Lass uns reden.</h3>
       <p class="kontakt-text">Schreib mir kurz, worum es geht – ich melde mich in der Regel innerhalb von 1-2 Werktagen.</p>
       <div class="kontakt-cta-wrap">
         <a href="#" class="btn btn-primary" id="kontakt-cta-mailto">Unverbindlich anfragen</a>
