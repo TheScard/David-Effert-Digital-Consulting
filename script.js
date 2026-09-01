@@ -11,7 +11,7 @@
   var el = document.getElementById('cursor-typer');
   if (!el) return;
 
-  var phrases = ['Websites.', 'Web-Apps.', 'Saubere Übergabe.'];
+  var phrases = ['Websites.', 'Web-Apps.', 'Visuals.', 'Songs.'];
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   if (reduceMotion) {
@@ -45,11 +45,8 @@
       el.textContent = current.slice(0, charIndex);
       setTimeout(erase, DELETE_SPEED);
     } else {
-      phraseIndex++;
-      if (phraseIndex < phrases.length) {
-        setTimeout(type, TYPE_SPEED);
-      }
-      // After the last phrase, stop: text stays empty, cursor keeps blinking via CSS.
+      phraseIndex = (phraseIndex + 1) % phrases.length;
+      setTimeout(type, TYPE_SPEED);
     }
   }
 
@@ -181,15 +178,31 @@
   });
 })();
 
-// Kontakt: E-Mail-Adresse kopieren
+// Kontakt: E-Mail-Adresse zur Laufzeit zusammensetzen (Schutz vor Adress-Scraping) und kopieren
 (function () {
   'use strict';
+
+  // Adresse in zwei Teilen, damit sie im HTML-Quellcode nicht als Klartext steht.
+  var user = 'david.effert';
+  var domain = 'outlook.de';
+  var email = user + '@' + domain;
+  var mailto = 'mailto:' + email;
+
+  var emailLink = document.getElementById('kontakt-mailto');
+  if (emailLink) {
+    emailLink.textContent = email;
+    emailLink.href = mailto;
+  }
+
+  var ctaLink = document.getElementById('kontakt-cta-mailto');
+  if (ctaLink) {
+    ctaLink.href = mailto;
+  }
 
   var btn = document.getElementById('copy-email-btn');
   if (!btn) return;
 
   var label = btn.querySelector('.copy-btn-label');
-  var email = btn.getAttribute('data-email');
   var resetTimer = null;
 
   function showCopied() {
