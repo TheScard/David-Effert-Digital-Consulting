@@ -43,7 +43,7 @@ body {
   background: var(--color-bg);
   color: var(--color-text);
   font-family: var(--font-body);
-  font-size: 1rem;
+  font-size: 0.95rem;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
@@ -100,7 +100,7 @@ body {
 
 h1, h2 {
   font-family: var(--font-display);
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: -0.01em;
   color: var(--color-text);
 }
@@ -309,8 +309,8 @@ main a:not(.btn):not(.logo):hover {
 }
 
 .hero-headline {
-  font-size: 2rem;
-  line-height: 1.2;
+  font-size: 2.25rem;
+  line-height: 1.1;
   margin-block: var(--space-2) var(--space-1);
 }
 
@@ -345,14 +345,14 @@ main a:not(.btn):not(.logo):hover {
 
 .hero-subline {
   color: var(--color-text-secondary);
-  font-size: 1.05rem;
+  font-size: 0.97rem;
   max-width: 46ch;
   margin-bottom: var(--space-3);
 }
 
 @media (min-width: 700px) {
   .hero-headline {
-    font-size: 2.75rem;
+    font-size: 3.1rem;
   }
 }
 
@@ -485,6 +485,14 @@ main a:not(.btn):not(.logo):hover {
   height: 200px;
   object-fit: cover;
   background: var(--color-bg);
+}
+
+.reference-teaser-img--top {
+  object-position: top;
+}
+
+.reference-teaser-img--upper {
+  object-position: center 38%;
 }
 
 .reference-teaser-body {
@@ -628,7 +636,7 @@ main a:not(.btn):not(.logo):hover {
 
 .about-text {
   max-width: 62ch;
-  font-size: 1.05rem;
+  font-size: 0.97rem;
 }
 .about-text + .about-text {
   margin-top: var(--space-3);
@@ -648,7 +656,8 @@ main a:not(.btn):not(.logo):hover {
 
 /* ---- Kontakt ---- */
 .kontakt-headline {
-  font-size: 1.75rem;
+  font-size: 2rem;
+  line-height: 1.15;
   margin-bottom: var(--space-2);
 }
 
@@ -726,6 +735,7 @@ main a:not(.btn):not(.logo):hover {
 
 .site-footer {
   padding-block: var(--space-3);
+  background: #242C33;
 }
 
 .footer-inner {
@@ -733,7 +743,7 @@ main a:not(.btn):not(.logo):hover {
   flex-direction: column;
   gap: var(--space-2);
   font-size: 0.85rem;
-  color: var(--color-text-secondary);
+  color: #F2F5EE;
 }
 
 .footer-nav {
@@ -742,14 +752,14 @@ main a:not(.btn):not(.logo):hover {
 }
 
 .footer-nav a {
-  color: var(--color-text-secondary);
+  color: #4FAF7C;
   text-decoration: underline;
-  text-decoration-color: var(--color-divider);
+  text-decoration-color: currentColor;
   text-underline-offset: 3px;
 }
 .footer-nav a:hover {
-  color: var(--color-text);
-  text-decoration-color: var(--color-text-secondary);
+  color: #F2F5EE;
+  text-decoration-color: currentColor;
 }
 
 @media (min-width: 700px) {
