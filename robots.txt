@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://effert-ds.com/sitemap.xml
